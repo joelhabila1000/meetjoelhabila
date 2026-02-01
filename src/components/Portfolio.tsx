@@ -12,45 +12,44 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "CoolHarvest Farms E-commerce",
       description:
         "Modern e-commerce solution with advanced filtering, cart management, and payment integration.",
       image: project3,
       category: "web",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      liveUrl: "https://coolharvestfarms.com/",
     },
     {
       id: 2,
-      title: "Mobile Banking App",
+      title: "PETCARE Mobile App",
       description:
-        "Secure mobile banking application with biometric authentication and real-time transactions.",
+        "Secure pet care mobile app with personalized pet management, vet appointment scheduling, and real-time activity and health tracking.",
       image: project2,
       category: "mobile",
       technologies: ["React Native", "Firebase", "Node.js"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "/404",
     },
     {
       id: 3,
-      title: "SaaS Dashboard",
+      title: "JCLEMENTS ENGINEERING DASHBOARD",
       description:
-        "Comprehensive dashboard for SaaS applications with analytics and user management.",
+        "Centralized engineering dashboard with data-driven insights, project oversight, and role-based user management.",
       image: project1,
       category: "web",
       technologies: ["Next.js", "TypeScript", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://jclementsengineering.com/",
     },
     {
       id: 4,
-      title: "Brand Identity Design",
+      title: "UI/UX Design",
       description:
-        "Complete brand identity package including logo, business cards, and marketing materials.",
+        "Complete UI/UX brand identity package, including logo design, business cards, and cohesive digital marketing assets.",
       image: project4,
       category: "design",
       technologies: ["Figma", "Illustrator", "Photoshop"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl:
+        "https://www.figma.com/design/BZBCIuY7OOaa0hn5cSWBWc/Practice-7?node-id=9-100&p=f&t=ubW9CeA0wHEI45Rx-0",
     },
   ];
 
@@ -98,9 +97,12 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
-            <div
+            <a
               key={project.id}
-              className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:scale-105"
+              href={project.liveUrl}
+              target={project.liveUrl !== "#" ? "_blank" : undefined}
+              rel={project.liveUrl !== "#" ? "noopener noreferrer" : undefined}
+              className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer block"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
@@ -118,13 +120,6 @@ const Portfolio = () => {
                       className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     >
                       <ExternalLink className="h-4 w-4" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
-                    >
-                      <Github className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
@@ -153,17 +148,20 @@ const Portfolio = () => {
 
                 {/* Links */}
                 <div className="flex gap-2">
-                  <Button variant="portfolio" size="sm" className="flex-1">
-                    <ExternalLink className="h-4 w-4 mr-1" />
-                    Live Demo
-                  </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Github className="h-4 w-4 mr-1" />
-                    Code
+                  <Button
+                    variant="portfolio"
+                    size="sm"
+                    className="flex-1"
+                    asChild
+                  >
+                    <span>
+                      <ExternalLink className="h-4 w-4 mr-1" />
+                      Live Demo
+                    </span>
                   </Button>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -117,6 +117,17 @@ const Hero = () => {
             >
               Let's Talk
             </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="text-lg px-8 py-6"
+            >
+              <a href="../assets/Habila Joel cv..pdf" download>
+                <ArrowDown className="h-4 w-4 mr-2 inline-block" />
+                Download CV
+              </a>
+            </Button>
           </div>
         </div>
       </div>
