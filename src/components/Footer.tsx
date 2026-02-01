@@ -1,56 +1,54 @@
-import React from "react";
-import { Heart, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React from 'react';
+import { Heart, Github, Linkedin, Twitter, Mail, ArrowUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const footerLinks = [
     {
-      title: "Navigation",
+      title: 'Navigation',
       links: [
-        { name: "Home", href: "hero" },
-        { name: "About", href: "about" },
-        { name: "Portfolio", href: "portfolio" },
-        { name: "Services", href: "services" },
-        { name: "Contact", href: "contact" },
-      ],
+        { name: 'Home', href: 'hero' },
+        { name: 'About', href: 'about' },
+        { name: 'Portfolio', href: 'portfolio' },
+        { name: 'Services', href: 'services' },
+        { name: 'Contact', href: 'contact' },
+      ]
     },
     {
-      title: "Services",
+      title: 'Services',
       links: [
-        { name: "Web Development", href: "services" },
-        { name: "Mobile Apps", href: "services" },
-        { name: "UI/UX Design", href: "services" },
-        { name: "Consulting", href: "services" },
-      ],
+        { name: 'Web Development', href: 'services' },
+        { name: 'Mobile Apps', href: 'services' },
+        { name: 'UI/UX Design', href: 'services' },
+        { name: 'Consulting', href: 'services' },
+      ]
     },
     {
-      title: "Contact",
+      title: 'Contact',
       links: [
-        {
-          name: "joelhabila1000@gmail.com",
-          href: "mailto:joelhabila1000@gmail.com",
-        },
-        { name: "09124352139, 09159386520", href: "tel:+2349124352139" },
-        { name: "Lagos Nigeria", href: "#" },
-      ],
-    },
+        { name: 'joelhabila1000@gmail.com', href: 'mailto:joelhabila1000@gmail.com' },
+        { name: '09124352139, 09159386520', href: 'tel:+2349124352139' },
+        { name: 'Lagos Nigeria', href: '#' },
+      ]
+    }
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:joelhabila1000@gmail.com", label: "Email" },
+    { icon: Github, href: 'https://github.com', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:joelhabila1000@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -65,8 +63,8 @@ const Footer = () => {
                 JOEL HABILA
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Creating exceptional digital experiences through innovative
-                development and thoughtful design.
+                Creating exceptional digital experiences through innovative development 
+                and thoughtful design.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
@@ -86,22 +84,16 @@ const Footer = () => {
             {/* Footer Links */}
             {footerLinks.map((section) => (
               <div key={section.title}>
-                <h4 className="font-semibold text-foreground mb-4">
-                  {section.title}
-                </h4>
+                <h4 className="font-semibold text-foreground mb-4">{section.title}</h4>
                 <ul className="space-y-2">
                   {section.links.map((link) => (
                     <li key={link.name}>
                       <button
                         onClick={() => {
-                          if (
-                            link.href.startsWith("#") ||
-                            (!link.href.includes("@") &&
-                              !link.href.includes("tel:"))
-                          ) {
+                          if (link.href.startsWith('#') || !link.href.includes('@') && !link.href.includes('tel:')) {
                             scrollToSection(link.href);
                           } else {
-                            window.open(link.href, "_blank");
+                            window.open(link.href, '_blank');
                           }
                         }}
                         className="text-muted-foreground hover:text-accent transition-colors duration-200"
@@ -122,7 +114,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 text-muted-foreground">
               <span>© 2025 Made by Joel Habila</span>
             </div>
-
+            
             <Button
               variant="ghost"
               size="sm"

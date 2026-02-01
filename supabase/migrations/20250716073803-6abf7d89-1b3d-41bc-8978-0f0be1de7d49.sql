@@ -23,6 +23,7 @@ CREATE TABLE public.projects (
   short_description TEXT,
   image_url TEXT,
   demo_url TEXT,
+  github_url TEXT,
   technologies TEXT[],
   category TEXT,
   featured BOOLEAN DEFAULT false,

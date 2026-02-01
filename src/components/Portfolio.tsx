@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExternalLink, Filter } from "lucide-react";
+import { ExternalLink, Github, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -18,38 +18,39 @@ const Portfolio = () => {
       image: project3,
       category: "web",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "https://coolharvestfarms.com/",
     },
     {
       id: 2,
-      title: "Pet Care App",
+      title: "Mobile Banking App",
       description:
-        "Smart and secure pet care mobile app offering seamless pet management, instant appointment booking, and real-time pet health monitoring.",
+        "Secure mobile banking application with biometric authentication and real-time transactions.",
       image: project2,
       category: "mobile",
       technologies: ["React Native", "Firebase", "Node.js"],
       liveUrl: "#",
+      githubUrl: "#",
     },
     {
       id: 3,
-      title: "JCLEMENTS ENGINEERING DASHBOARD",
+      title: "SaaS Dashboard",
       description:
-        "Engineering project management platform with real-time tracking, team collaboration, and comprehensive analytics for streamlined workflows and improved productivity.",
+        "Comprehensive dashboard for SaaS applications with analytics and user management.",
       image: project1,
       category: "web",
-      technologies: ["Next.js", "TypeScript", "SuperBase"],
-      liveUrl: "https://jclementsengineering.com/",
+      technologies: ["Next.js", "TypeScript", "PostgreSQL"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
       id: 4,
-      title: "UI/UX Design",
+      title: "Brand Identity Design",
       description:
-        "Comprehensive UI/UX brand identity solution featuring logo design, business cards, and user-focused marketing materials.",
+        "Complete brand identity package including logo, business cards, and marketing materials.",
       image: project4,
       category: "design",
       technologies: ["Figma", "Illustrator", "Photoshop"],
-      liveUrl:
-        "https://www.figma.com/proto/BZBCIuY7OOaa0hn5cSWBWc/Practice-7?node-id=9-100&t=ubW9CeA0wHEI45Rx-1",
+      liveUrl: "#",
+      githubUrl: "#",
     },
   ];
 
@@ -97,12 +98,9 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
-            <a
+            <div
               key={project.id}
-              href={project.liveUrl}
-              target={project.liveUrl !== "#" ? "_blank" : undefined}
-              rel={project.liveUrl !== "#" ? "noopener noreferrer" : undefined}
-              className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer block"
+              className="group bg-card rounded-xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
@@ -125,7 +123,9 @@ const Portfolio = () => {
                       variant="outline"
                       size="sm"
                       className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
-                    ></Button>
+                    >
+                      <Github className="h-4 w-4" />
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ const Portfolio = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-accent/10 text-accent rounded-md text-xs font-medium"
+                      className="px-2 py-1 bg-accent/10 text-blue-900 rounded-md text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -153,31 +153,18 @@ const Portfolio = () => {
 
                 {/* Links */}
                 <div className="flex gap-2">
-                  <Button
-                    variant="portfolio"
-                    size="sm"
-                    className="flex-1"
-                    asChild
-                  >
-                    <span>
-                      <ExternalLink className="h-4 w-4 mr-1" />
-                      Live Demo
-                    </span>
+                  <Button variant="portfolio" size="sm" className="flex-1">
+                    <ExternalLink className="h-4 w-4 mr-1" />
+                    Live Demo
+                  </Button>
+                  <Button variant="outline" size="sm" className="flex-1">
+                    <Github className="h-4 w-4 mr-1" />
+                    Code
                   </Button>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-muted-foreground mb-6">
-            Interested in seeing more of my work?
-          </p>
-          <Button variant="hero" size="lg" className="px-8 py-6">
-            View All Projects
-          </Button>
         </div>
       </div>
     </section>
