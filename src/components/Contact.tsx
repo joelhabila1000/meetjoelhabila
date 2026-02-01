@@ -6,7 +6,7 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
+  X,
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
@@ -77,19 +77,14 @@ const Contact = () => {
 
   const socialLinks = [
     {
-      icon: Github,
-      href: "https://github.com",
-      label: "GitHub",
-    },
-    {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/joelhabila1000/",
       label: "LinkedIn",
     },
     {
-      icon: Twitter,
-      href: "https://twitter.com",
-      label: "Twitter",
+      icon: X,
+      href: "https://x.com",
+      label: "X",
     },
   ];
 

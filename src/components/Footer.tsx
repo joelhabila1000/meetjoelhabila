@@ -45,9 +45,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/joelhabila1000', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/joelhabila1000/', label: 'LinkedIn' },
+    
     { icon: Mail, href: 'mailto:joelhabila1000@gmail.com', label: 'Email' },
   ];
 
@@ -112,7 +112,7 @@ const Footer = () => {
         <div className="border-t border-border py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-muted-foreground">
-              <span>© 2025 Made by Joel Habila</span>
+              <span>© 2026 Made by Joel Habila</span>
             </div>
             
             <Button
