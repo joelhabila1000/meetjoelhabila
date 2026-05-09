@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
+import project5 from "@/assets/image.png";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -41,13 +41,13 @@ const Portfolio = () => {
       liveUrl: "https://jclementsengineering.com/",
     },
     {
-      id: 4,
-      title: "UI/UX Design",
+      id: 5,
+      title: "J-ORDER",
       description:
         "Complete UI/UX brand identity package, including logo design, business cards, and cohesive digital marketing assets.",
-      image: project4,
+      image: project5,
       category: "design",
-      technologies: ["Figma", "Illustrator", "Photoshop"],
+      technologies: ["Figma"],
       liveUrl:
         "https://www.figma.com/design/BZBCIuY7OOaa0hn5cSWBWc/Practice-7?node-id=9-100&p=f&t=ubW9CeA0wHEI45Rx-0",
     },

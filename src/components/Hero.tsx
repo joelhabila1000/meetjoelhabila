@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ArrowDown, Code, Palette, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.png";
 
 const Hero = () => {
   const jobTitles = [

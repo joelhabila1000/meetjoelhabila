@@ -50,7 +50,7 @@ const Navigation = () => {
               <img
                 src="/MY LOGO.png"
                 alt="My Logo"
-                className="h-14 w-15 rounded-full"
+                className="h-24 w-15 rounded-full"
               />
             </button>
           </div>
